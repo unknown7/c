@@ -9,6 +9,7 @@ int main() {
 			for (int q = 0; q < x * 10 / 5; q++) {
 				if (i * 1 + j * 2 + q * 5 == x * 10) {
 					printf("可以用%d个1角 %d个2角 %d个5角，凑成%d元\n", i, j, q, x);
+					
 					goto out;
 				}
 			}
