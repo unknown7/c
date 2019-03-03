@@ -1,19 +1,22 @@
 #include <stdio.h>
 #include <math.h>
-struct student {
-	int id;
-	const char *name;
-	int gender;
+struct date {
+	int month;
+	int day;
+	int year;
 };
 
 int main() {
-	struct student s = {
-		1, "wilford", 1
+	struct date today = {
+		03, 02, 2019
 	};
-	printf("student %s, id=%d, gender=%s\n", s.name, s.id, s.gender == 1 ? "ÄÐ" : "Å®");
-	struct student s2 = s;
-	printf("%p\n", &s);
-	printf("%p\n", &s2);
+	today = (struct date){03, 03, 2019};
+	struct date tomorrow = today;
+	tomorrow.day = 04;
+	printf("Today's date is %i-%i-%i\n", today.year, today.month, today.day);
+	printf("Tomorrow's date is %i-%i-%i\n", tomorrow.year, tomorrow.month, tomorrow.day);
+	printf("today=%p\n", &today);
+	printf("tomorrow=%p\n", &tomorrow);
 	return 0;
 }
 
