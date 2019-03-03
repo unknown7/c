@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 void minmax(int nums[], int size, int *max, int *min);
+void test(const int nums[]);
 int main() {
 	const int SIZE = 30;
 	int nums[SIZE] = {0};
@@ -27,6 +28,7 @@ int main() {
 	printf("&*q=%p\n", &*q);
 	printf("nums=%p\n", nums);
 	
+	test(nums);
 	
 	return 0;
 }
@@ -40,4 +42,8 @@ void minmax(int nums[], int size, int *min, int *max) {
 			*max = nums[i];
 		}
 	}
+}
+void test(const int nums[]) {
+	// can not do this
+//	nums[0] = 1000;
 }

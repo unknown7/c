@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
+#include <stdlib.h>
 int mycmp(const char *a, const char *b);
 int main() {
 	char a[] = "abc";
-	char b[] = "abc";
-	int cmp = mycmp(a, b);
-	printf("%d", cmp);
+	char b[] = "abc ";
+	printf("strcmp=%d\n", strcmp(a, b));
+	printf("mycmp=%d", mycmp(a, b));
 	return 0;
 }
 int mycmp(const char *a, const char *b) {
