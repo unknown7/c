@@ -15,8 +15,8 @@ typedef struct {
 	Point p2;
 } Rectangle;
 
-Rectangle* change(Rectangle *r);
-Point* change(Point *p, int x, int y);
+Rectangle* changeR(Rectangle *r);
+Point* changeP(Point *p, int x, int y);
 
 int main() {
 	Rectangle r = {
@@ -24,20 +24,20 @@ int main() {
 		{7, 8},
 	};
 	PRT(FMTDN, r.p1.x);
-	change(&r.p1, 2, 3);
+	changeP(&r.p1, 2, 3);
 	PRT(FMTDN, r.p1.x);
 	PRT(FMTDN, r.p1.x);
-	change(&r);
+	changeR(&r);
 	PRT(FMTDN, r.p1.x);
 	PRT(FMTDN, r.p1.y);
 	return 0;
 }
-Rectangle* change(Rectangle *r) {
+Rectangle* changeR(Rectangle *r) {
 	int v;
 	scanf("%d", &v);
-	change(&r->p1, v, v);
+	changeP(&r->p1, v, v);
 }
-Point* change(Point *p, int x, int y) {
+Point* changeP(Point *p, int x, int y) {
 	p->x = x;
 	p->y = y;
 	return p;
