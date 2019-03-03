@@ -17,8 +17,9 @@ int main() {
 	int num2;
 	scanf("%d", &num2);
 	int nums2[num2];
-	for (int i = 0; i < num2; i++) {
-		scanf("%d", &nums2[i]);
+	int l;
+	for (l = 0; l < num2; l++) {
+		scanf("%d", &nums2[l]);
 	}
 	
 	int ret[40];
@@ -31,15 +32,17 @@ int main() {
 		}
 	}
 	length = sizeof(nums1) / sizeof(nums1[0]);
-	for (int j = 0; j < num2; j++) {
+	int j;
+	for (j = 0; j < num2; j++) {
 		if (!contains(nums1, length, nums2[j]) && !contains(ret, retc, nums2[j])) {
 			ret[retc++] = nums2[j];
 		}
 	}
 	
-	for (int i = 0; i < retc; i++) {
-		printf("%d", ret[i]);
-		if (i < retc - 1) {
+	int k;
+	for (k = 0; k < retc; k++) {
+		printf("%d", ret[k]);
+		if (k < retc - 1) {
 			printf(" ");
 		}
 	}
@@ -48,7 +51,8 @@ int main() {
 }
 int contains(int arr[], int length, int number) {
 	int ret = 0;
-	for (int i = 0; i < length; i++) {
+	int i;
+	for (i = 0; i < length; i++) {
 		if (arr[i] == number) {
 			ret = 1;
 			break;

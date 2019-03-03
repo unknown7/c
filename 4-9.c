@@ -9,7 +9,8 @@ int main() {
 	int h;
 	scanf("%d", &h);
 	z(h / 2, h);
-	for (int i = 0; i < h; i++) {
+	int i;
+	for (i = 0; i < h; i++) {
 		printf("* ");
 	}
 	printf("\n");
@@ -17,22 +18,26 @@ int main() {
 	return 0;
 }
 void z(int nums, int total) {
-	for (int i = 1; i <= nums; i++) {
+	int i;
+	for (i = 1; i <= nums; i++) {
 		o(i, total);
 	}
 }
 void d(int nums, int total) {
-	for (int i = nums; i >= 1; i--) {
+	int i;
+	for (i = nums; i >= 1; i--) {
 		o(i, total);
 	}
 }
 void o(int i, int total) {
 	int stars = i * 2 - 1;
 	int spaces = total - i * 2 + 1;
-	for (int j = 0; j < spaces; j++) {
+	int j;
+	for (j = 0; j < spaces; j++) {
 		printf(" ");
 	}
-	for (int j = 0; j < stars; j++) {
+	int k;
+	for (k = 0; k < stars; k++) {
 		printf("* ");
 	}
 	printf("\n");

@@ -5,8 +5,9 @@ void minmax(int nums[], int size, int *max, int *min);
 void test(const int nums[]);
 int main() {
 	const int SIZE = 30;
-	int nums[SIZE] = {0};
-	for (int i = 0; i < SIZE; i++) {
+	int nums[SIZE];
+	int i;
+	for (i = 0; i < SIZE; i++) {
 		nums[i] = rand() % 1000;
 		printf("%d\t", nums[i]);
 	}
@@ -34,7 +35,8 @@ int main() {
 }
 void minmax(int nums[], int size, int *min, int *max) {
 	*min = *max = nums[0];
-	for (int i = 0; i < size; i++) {
+	int i;
+	for (i = 0; i < size; i++) {
 		if (*min > nums[i]) {
 			*min = nums[i];
 		}
