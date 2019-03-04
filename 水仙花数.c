@@ -2,7 +2,7 @@
 #include <math.h>
 int main() {
 	int n;
-	printf("请输入：");
+	printf("脟毛脢盲脠毛拢潞");
 	scanf("%d", &n);
 	int m = 1;
 	for (int i = 0; i < n; i++) {
@@ -26,7 +26,7 @@ int main() {
 			w /= 10;
 		}
 		if (sum == x) {
-			printf("%d是水仙花数\n", x);
+			printf("%d脢脟脣庐脧脡禄篓脢媒\n", x);
 		}
 	}
 	return 0;
