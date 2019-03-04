@@ -2,7 +2,7 @@
 #include <math.h>
 int main() {
 	int n = 1;
-	printf("ÇëÊäÈën£º");
+	printf("Ã‡Ã«ÃŠÃ¤ÃˆÃ«nÂ£Âº");
 	scanf("%d", &n);
 	if (n > 9) {
 		n = 9;
