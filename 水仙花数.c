@@ -2,13 +2,15 @@
 #include <math.h>
 int main() {
 	int n;
-	printf("脟毛脢盲脠毛拢潞");
+	printf("请输入：");
 	scanf("%d", &n);
 	int m = 1;
-	for (int i = 0; i < n; i++) {
+	int i;
+	for (i = 0; i < n; i++) {
 		m *= 10;
 	}
-	for (int x = m / 10; x < m; x++) {
+	int x;
+	for (x = m / 10; x < m; x++) {
 		int w = 1;
 		int cnt = 0;
 		int t = x;
@@ -26,7 +28,7 @@ int main() {
 			w /= 10;
 		}
 		if (sum == x) {
-			printf("%d脢脟脣庐脧脡禄篓脢媒\n", x);
+			printf("%d是水仙花数\n", x);
 		}
 	}
 	return 0;

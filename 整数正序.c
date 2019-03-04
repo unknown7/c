@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main() {
-	int x = 1;
+	int x = 1956;
 	int t = x;
 	int m = 1;
 	while (t > 9) {
