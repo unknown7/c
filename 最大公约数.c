@@ -8,7 +8,7 @@ int main() {
 			max = i;
 		}
 	}
-	printf("最大公约数为：%d", max);
+	printf("脳卯麓贸鹿芦脭录脢媒脦陋拢潞%d", max);
 	return 0;
 }
 
