@@ -3,14 +3,14 @@ int main() {
 	double sum;
 	int count = 0;
 	int number;
-	printf("请输入：");
+	printf("璇疯緭鍏ワ細");
 	scanf("%d", &number);
 	while (number != -1) {
 		sum += number;
 		count++;
-		printf("请输入：");
+		printf("璇疯緭鍏ワ細");
 		scanf("%d", &number);
 	}
-	printf("共输入了%d个数，平均数为：%lf", count, sum / count);
+	printf("鍏辫緭鍏ヤ簡%d涓暟锛屽钩鍧囨暟涓猴細%lf", count, sum / count);
 	return 0;
 }
