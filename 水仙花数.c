@@ -2,35 +2,32 @@
 #include <math.h>
 int main() {
 	int n;
-	printf("请输入：");
+//	printf("请输入：");
 	scanf("%d", &n);
 	int m = 1;
 	int i;
+	int cnt = 0;
 	for (i = 0; i < n; i++) {
 		m *= 10;
+		cnt++;
 	}
+	int w = m / 10;
 	int x;
 	for (x = m / 10; x < m; x++) {
-		int w = 1;
-		int cnt = 0;
-		int t = x;
+		int t = w;
 		int q = x;
-		while (t > 0) {
-			t /= 10;
-			w *= 10;
-			cnt++;
-		}
 		double sum = 0;
-		while (w > 0) {
-			int a = q / w;
+		while (t > 0) {
+			int a = q / t;
 			sum += pow(a, cnt);
-			q %= w;
-			w /= 10;
+			q %= t;
+			t /= 10;
 		}
 		if (sum == x) {
-			printf("%d是水仙花数\n", x);
+			printf("%d\n", x);
 		}
 	}
+	
 	return 0;
 }
 
