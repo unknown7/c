@@ -5,7 +5,7 @@
 int mycmp(const char *a, const char *b);
 int main() {
 	char a[] = "abc";
-	char b[] = "abc ";
+	char b[] = "Abc";
 	printf("strcmp=%d\n", strcmp(a, b));
 	printf("mycmp=%d", mycmp(a, b));
 	return 0;

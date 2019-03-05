@@ -54,6 +54,7 @@ int main() {
 	printf("average = %.2f\n", sum / n);
 	printf("max = %.2f\n", max);
 	printf("min = %.2f", min);
+	free(p);
 	return 0;
 }
 
