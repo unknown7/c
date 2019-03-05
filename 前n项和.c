@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main() {
 	int n = 0;
-	printf("ÇëÊäÈën£º");
+	printf("Ã‡Ã«ÃŠÃ¤ÃˆÃ«nÂ£Âº");
 	scanf("%d", &n);
 	double sum = 0.0;
 	for (int i = 1; i <= n; i++) {
