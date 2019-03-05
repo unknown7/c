@@ -1,17 +1,18 @@
 #include <stdio.h>
 int main() {
 	int n = 0;
-	printf("Ã‡Ã«ÃŠÃ¤ÃˆÃ«nÂ£Âº");
+	printf("ÇëÊäÈën:");
 	scanf("%d", &n);
 	double sum = 0.0;
-	for (int i = 1; i <= n; i++) {
+	int i;
+	for (i = 1; i <= n; i++) {
 		sum += 1.0 / i;
 	}
 	printf("f(%d)1=%f\n", n, sum);
 	
 	sum = 0.0;
 	double sign = 1.0;
-	for (int i = 1; i <= n; i++) {
+	for (i = 1; i <= n; i++) {
 		sum += sign / i;
 		sign = -sign;
 	}
