@@ -1,24 +1,25 @@
 /**
-	è¾“å…¥æ•°é‡ä¸ç¡®å®šçš„[0,9]èŒƒå›´å†…çš„æ•´æ•°ï¼Œç»Ÿè®¡æ¯ä¸€ç§æ•°å­—å‡ºç°çš„æ¬¡æ•° 
+	ÊäÈëÊıÁ¿²»È·¶¨µÄ[0,9]·¶Î§ÄÚµÄÕûÊı£¬Í³¼ÆÃ¿Ò»ÖÖÊı×Ö³öÏÖµÄ´ÎÊı 
 */
 #include <stdio.h>
 #include <math.h>
 int main() {
 	const int SIZE = 10;
 	int arr[SIZE];
-	for (int i = 0; i < SIZE; i++) {
+	int i;
+	for (i = 0; i < SIZE; i++) {
 		arr[i] = 0;
 	}
 	int x;
-	printf("è¯·è¾“å…¥:");
+	printf("ÇëÊäÈë:");
 	scanf("%d", &x);
 	while (x != -1) {
 		arr[x]++;
-		printf("è¯·è¾“å…¥:");
+		printf("ÇëÊäÈë:");
 		scanf("%d", &x);
 	}
-	for (int i = 0; i < SIZE; i++) {
-		printf("%då‡ºç°äº†%dæ¬¡\n", i, arr[i]);
+	for (i = 0; i < SIZE; i++) {
+		printf("%d³öÏÖÁË%d´Î\n", i, arr[i]);
 	}
 	return 0;
 }
