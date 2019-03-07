@@ -12,8 +12,8 @@ int main() {
 		}
 		number++;
 	}
-	
-	for (int i = 0; i < SIZE; i++) {
+	int i;
+	for (i = 0; i < SIZE; i++) {
 		printf("%d\t", primes[i]);
 	}
 	return 0;
@@ -24,7 +24,8 @@ int isPrime(int x) {
 		isPrime = 0;
 		return isPrime;
 	}
-	for (int i = 2; i < sqrt(x); i++) {
+	int i;
+	for (i = 2; i < sqrt(x); i++) {
 		if (x % i == 0) {
 			isPrime = 0;
 			break;
