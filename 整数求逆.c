@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main() {
 	int x = 0;
-	printf("è¯·è¾“å…¥ï¼š");
+	printf("ÇëÊäÈë£º");
 	scanf("%d", &x);
 	int digit = 0;
 	int ret = 0;

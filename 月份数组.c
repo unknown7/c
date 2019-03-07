@@ -17,9 +17,9 @@ int main() {
 		"December",
 	};
 	int month = 0;
-	printf("璇疯緭鍏ユ湀浠斤細");
+	printf("请输入月份：");
 	scanf("%d", &month);
-	printf("鎮ㄨ緭鍏ョ殑鏄細%d锛屽搴旂殑鏈堜唤涓猴細%s\n", month, months[month]);
+	printf("您输入的是：%d，对应的月份为：%s\n", month, months[month]);
 	return 0;
 }
 

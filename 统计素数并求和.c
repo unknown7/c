@@ -5,7 +5,7 @@ int main() {
 	int cnt = 0;
 	int sum = 0;
 	int is = 1;
-	printf("è¯·è¾“å…¥må’Œnï¼š");
+	printf("ÇëÊäÈëmºÍn£º");
 	scanf("%d %d", &m, &n);
 	if (m < 1 || m > 500) {
 		m = 1;
@@ -23,7 +23,7 @@ int main() {
 			}
 		}
 		if (is) {
-			printf("%dæ˜¯ç´ æ•°\n", i);
+			printf("%dÊÇËØÊı\n", i);
 			cnt++;
 			sum += i;
 		}
