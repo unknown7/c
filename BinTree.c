@@ -40,7 +40,7 @@ int main() {
 	if (f) {
 		printf("%d", f->data);
 	} else {
-		printf("There is no node in the BinTree with a data of:%d", x);
+		printf("<find> There is no node in the BinTree with a data of:%d", x);
 	}
 	PRINTLN;
 	printf("min:\t");
@@ -50,6 +50,14 @@ int main() {
 	printf("max:\t");
 	BinTree *max = findMax(&tree);
 	printf("%d", max->data);
+	PRINTLN;
+	printf("delete x: ");
+	scanf("%d", &x);
+	BinTree *d = deleteTreeNode(&tree, x);
+	if (d != &tree) {
+		printf("delete:%d success! in loop: ", d->data);
+		inOrderLoop(&tree);
+	}
 	return 0;
 }
 BinTree createTree(int x) {
@@ -196,7 +204,31 @@ BinTree* findMax(BinTree *tree) {
 	return tree;
 }
 BinTree* deleteTreeNode(BinTree *tree, int x) {
-	
+	BinTree *temp;
+	if (!tree) {
+		printf("<deleteTreeNode> There is no node in the BinTree with a data of:%d", x);
+	} else {
+		if (x < tree->data) {
+			tree->left = deleteTreeNode(tree->left, x);
+		} else if (x > tree->data) {
+			tree->right = deleteTreeNode(tree->right, x);
+		} else {
+			if (tree->left && tree->right) {
+				temp = findMax(tree->left);
+				tree->data = temp->data;
+				tree->left = deleteTreeNode(tree->left, tree->data);
+			} else {
+				temp = tree;
+				if (!tree->left) {
+					tree = tree->right;
+				} else if (!tree->right) {
+					tree = tree->left;
+				}
+				free(temp);
+			}
+		}
+	}
+	return tree;
 }
 
 Stack createStack() {
