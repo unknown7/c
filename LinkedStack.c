@@ -41,8 +41,12 @@ int pop(LinkedStack *s) {
 		x = p->value;
 		s->cur = p->prev;
 		free(p);
+		s->size--;
 	}
 	return x;
+}
+int isEmpty(LinkedStack *s) {
+	return s->size > 0;
 }
 
 

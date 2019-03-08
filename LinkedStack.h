@@ -12,4 +12,5 @@ typedef struct {
 LinkedStack create();
 void push(LinkedStack *s, int x);
 int pop(LinkedStack *s);
+int isEmpty(LinkedStack *s);
 #endif
