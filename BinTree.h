@@ -30,6 +30,10 @@ void inOrderLoop(BinTree *tree);
 void postOrderRecursion(BinTree *tree);
 void postOrderLoop(BinTree *tree);
 void levelOrder(BinTree *tree);
+BinTree* find(BinTree *tree, int x);
+BinTree* findMin(BinTree *tree);
+BinTree* findMax(BinTree *tree);
+BinTree* deleteTreeNode(BinTree *tree, int x);
 
 Stack createStack();
 void push(Stack *s, BinTree *data);

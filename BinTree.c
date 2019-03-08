@@ -5,11 +5,12 @@
 #include "BinTree.h"
 #define PRINTLN printf("\n");
 #define SIZE 10
+#define MAX_DATA 50
 int main() {
-	BinTree tree = createTree(rand() % 100);
+	BinTree tree = createTree(rand() % MAX_DATA);
 	int i;
 	for (i = 0; i < SIZE; i++) {
-		add(&tree, rand() % 100);
+		add(&tree, rand() % MAX_DATA);
 	}
 	printf("pre recursion:\t");
 	preOrderRecursion(&tree);
@@ -31,6 +32,24 @@ int main() {
 	PRINTLN;
 	printf("level order:\t");
 	levelOrder(&tree);
+	PRINTLN;
+	printf("find x:\t");
+	int x;
+	scanf("%d", &x);
+	BinTree *f = find(&tree, x);
+	if (f) {
+		printf("%d", f->data);
+	} else {
+		printf("There is no node in the BinTree with a data of:%d", x);
+	}
+	PRINTLN;
+	printf("min:\t");
+	BinTree *min = findMin(&tree);
+	printf("%d", min->data);
+	PRINTLN;
+	printf("max:\t");
+	BinTree *max = findMax(&tree);
+	printf("%d", max->data);
 	return 0;
 }
 BinTree createTree(int x) {
@@ -147,6 +166,37 @@ void levelOrder(BinTree *tree) {
 			addQ(&q, tree->right);
 		}
 	}
+}
+BinTree* find(BinTree *tree, int x) {
+	while (tree) {
+		if (x < tree->data) {
+			tree = tree->left;
+		} else if (x > tree->data) {
+			tree = tree->right;
+		} else {
+			return tree;
+		}
+	}
+	return NULL;
+}
+BinTree* findMin(BinTree *tree) {
+	if (tree) {
+		while (tree->left) {
+			tree = tree->left;
+		}
+	}
+	return tree;
+}
+BinTree* findMax(BinTree *tree) {
+	if (tree) {
+		while (tree->right) {
+			tree = tree->right;
+		}
+	}
+	return tree;
+}
+BinTree* deleteTreeNode(BinTree *tree, int x) {
+	
 }
 
 Stack createStack() {
