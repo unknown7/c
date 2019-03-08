@@ -14,6 +14,11 @@ typedef struct {
 	int size;
 	struct _node *cur;
 } Stack;
+typedef struct {
+	int size;
+	struct _node *rear;
+	struct _node *front;
+} Queue;
 
 
 BinTree createTree(int x);
@@ -29,5 +34,15 @@ void levelOrder(BinTree *tree);
 Stack createStack();
 void push(Stack *s, BinTree *data);
 BinTree* pop(Stack *s);
-int isEmpty(Stack *s);
+int isEmptyStack(Stack *s);
+
+Queue createQueue();
+void addQ(Queue *q, BinTree *data);
+BinTree* deleteQ(Queue *q);
+int isEmptyQueue(Queue *q);
 #endif
+
+
+
+
+

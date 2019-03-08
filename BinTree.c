@@ -4,11 +4,13 @@
 #include <stdlib.h>
 #include "BinTree.h"
 #define PRINTLN printf("\n");
+#define SIZE 10
 int main() {
-	BinTree tree = createTree(6);
-	add(&tree, 8);
-	add(&tree, 4);
-	add(&tree, 5);
+	BinTree tree = createTree(rand() % 100);
+	int i;
+	for (i = 0; i < SIZE; i++) {
+		add(&tree, rand() % 100);
+	}
 	printf("pre recursion:\t");
 	preOrderRecursion(&tree);
 	PRINTLN;
@@ -26,6 +28,9 @@ int main() {
 	PRINTLN;
 	printf("post loop:\t");
 	postOrderLoop(&tree);
+	PRINTLN;
+	printf("level order:\t");
+	levelOrder(&tree);
 	return 0;
 }
 BinTree createTree(int x) {
@@ -70,13 +75,13 @@ void preOrderRecursion(BinTree *tree) {
 }
 void preOrderLoop(BinTree *tree) {
 	Stack s = createStack();
-	while (tree || !isEmpty(&s)) {
+	while (tree || !isEmptyStack(&s)) {
 		while (tree) {
 			printf("%d ", tree->data);
 			push(&s, tree);
 			tree = tree->left;
 		}
-		if (!isEmpty(&s)) {
+		if (!isEmptyStack(&s)) {
 			tree = pop(&s);
 			tree = tree->right;
 		}
@@ -91,12 +96,12 @@ void inOrderRecursion(BinTree *tree) {
 }
 void inOrderLoop(BinTree *tree) {
 	Stack s = createStack();
-	while (tree || !isEmpty(&s)) {
+	while (tree || !isEmptyStack(&s)) {
 		while (tree) {
 			push(&s, tree);
 			tree = tree->left;
 		}
-		if (!isEmpty(&s)) {
+		if (!isEmptyStack(&s)) {
 			tree = pop(&s);
 			printf("%d ", tree->data);
 			tree = tree->right;
@@ -113,24 +118,35 @@ void postOrderRecursion(BinTree *tree) {
 void postOrderLoop(BinTree *tree) {
 	Stack s1 = createStack();
 	Stack s2 = createStack();
-	while (tree || !isEmpty(&s1)) {
+	while (tree || !isEmptyStack(&s1)) {
 		while (tree) {
 			push(&s1, tree);
 			push(&s2, tree);
 			tree = tree->right;
 		}
-		if (!isEmpty(&s1)) {
+		if (!isEmptyStack(&s1)) {
 			tree = pop(&s1);
 			tree = tree->left;
 		}
 	}
-	while (!isEmpty(&s2)) {
+	while (!isEmptyStack(&s2)) {
 		tree = pop(&s2);
 		printf("%d ", tree->data);
 	}
 }
 void levelOrder(BinTree *tree) {
-	
+	Queue q = createQueue();
+	addQ(&q, tree);
+	while (!isEmptyQueue(&q)) {
+		tree = deleteQ(&q);
+		printf("%d ", tree->data);
+		if (tree->left) {
+			addQ(&q, tree->left);
+		}
+		if (tree->right) {
+			addQ(&q, tree->right);
+		}
+	}
 }
 
 Stack createStack() {
@@ -164,10 +180,44 @@ BinTree* pop(Stack *s) {
 	}
 	return tree;
 }
-int isEmpty(Stack *s) {
+int isEmptyStack(Stack *s) {
 	return s->size <= 0;
 }
-
+Queue createQueue() {
+	Queue q;
+	q.size = 0;
+	q.front = q.rear = NULL;
+	return q;
+}
+void addQ(Queue *q, BinTree *data) {
+	Node *n = (Node*)malloc(sizeof(Node));
+	n->data = data;
+	n->next = NULL;
+	if (isEmptyQueue(q)) {
+		q->front = q->rear = n;
+	} else {
+		n->prev = q->rear;
+		q->rear->next = n;
+		q->rear = n;
+	}
+	q->size++;
+}
+BinTree* deleteQ(Queue *q) {
+	BinTree *t;
+	if (isEmptyQueue(q)) {
+		t = NULL;
+	} else {
+		Node *n = q->front;
+		q->front = n->next;
+		t = n->data;
+		free(n);
+		q->size--;
+	}
+	return t;
+}
+int isEmptyQueue(Queue *q) {
+	return q->size <= 0;
+}
 
 
 
