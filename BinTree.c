@@ -175,6 +175,22 @@ void levelOrder(BinTree *tree) {
 		}
 	}
 }
+Queue levelOrderResult(BinTree *tree) {
+	Queue q = createQueue();
+	Queue result = createQueue();
+	addQ(&q, tree);
+	while (!isEmptyQueue(&q)) {
+		tree = deleteQ(&q);
+		addQ(&result, tree);
+		if (tree->left) {
+			addQ(&q, tree->left);
+		}
+		if (tree->right) {
+			addQ(&q, tree->right);
+		}
+	}
+	return result;
+}
 BinTree* find(BinTree *tree, int x) {
 	while (tree) {
 		if (x < tree->data) {

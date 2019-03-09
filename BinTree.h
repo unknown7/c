@@ -30,6 +30,7 @@ void inOrderLoop(BinTree *tree);
 void postOrderRecursion(BinTree *tree);
 void postOrderLoop(BinTree *tree);
 void levelOrder(BinTree *tree);
+Queue levelOrderResult(BinTree *tree);
 BinTree* find(BinTree *tree, int x);
 BinTree* findMin(BinTree *tree);
 BinTree* findMax(BinTree *tree);
