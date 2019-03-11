@@ -32,6 +32,7 @@ MatrixGraph* buildGraph() {
 	int edgeNum;
 	printf("Please input edgeNum:");
 	scanf("%d", &edgeNum);
+	g->en = edgeNum;
 	int i;
 	printf("Please input edge and weight(exp:0 2 17):");
 	for (i = 0; i < edgeNum; i++) {
