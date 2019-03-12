@@ -15,6 +15,7 @@ int main() {
 		}
 		printf("\n");
 	}
+	DFS(g, 3);
 	return 0;
 }
 ListGraph* createGraph(int size) {
@@ -27,6 +28,7 @@ ListGraph* createGraph(int size) {
 		n.v = i;
 		n.next = NULL;
 		g->heads[i] = n;
+		g->visited[i] = 0;
 	}
 	return g;
 }
@@ -65,7 +67,21 @@ ListGraph* buildGraph() {
 	}
 	return g;
 }
-
+void DFS(ListGraph *g, int vertex) {
+	visit(vertex);
+	g->visited[vertex] = 1;
+	GNode *node = g->heads[vertex].next;
+	while (node) {
+		if (!g->visited[node->v]) {
+			DFS(g, node->v);
+		}
+		node = node->next;
+	}
+}
+void BFS(ListGraph *g, int vertex);
+void visit(int vertex) {
+	printf("visit vertex:%d\n", vertex);
+}
 
 
 

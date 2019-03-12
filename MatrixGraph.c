@@ -5,18 +5,20 @@
 #include "MatrixGraph.h"
 
 int main() {
-	
+	MatrixGraph *g = buildGraph();
+	DFS(g, 3);
 	return 0;
 }
 MatrixGraph* createGraph(int size) {
 	MatrixGraph *g = (MatrixGraph*)malloc(sizeof(MatrixGraph));
-	g->vn = 0;
+	g->vn = size;
 	g->en = 0;
 	int i, j;
 	for (i = 0; i < g->vn; i++) {
 		for (j = 0; j < g->vn; j++) {
 			g->g[i][j] = INFINITY_NUM;
 		}
+		g->visited[i] = 0;
 	}
 	return g;
 }
@@ -46,7 +48,20 @@ MatrixGraph* buildGraph() {
 	}
 	return g;
 }
-
+void DFS(MatrixGraph *g, int vertex) {
+	visit(vertex);
+	g->visited[vertex] = 1;
+	int i;
+	for (i = 0; i < g->vn; i++) {
+		if (!g->visited[i] && g->g[vertex][i] != INFINITY_NUM) {
+			DFS(g, i);
+		}
+	}
+}
+void BFS(MatrixGraph *g, int vertex);
+void visit(int vertex) {
+	printf("visit vertex:%d\n", vertex);
+}
 
 
 

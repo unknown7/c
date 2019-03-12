@@ -15,8 +15,12 @@ typedef struct {
 	int vn;
 	int en;
 	GNode heads[MAX_VERTEX_NUM];
+	int visited[MAX_VERTEX_NUM];
 } ListGraph;
 ListGraph* createGraph(int size);
 void insertEdge(ListGraph* g, ListEdge* e);
 ListGraph* buildGraph();
+void DFS(ListGraph *g, int vertex);
+void BFS(ListGraph *g, int vertex);
+void visit(int vertex);
 #endif
