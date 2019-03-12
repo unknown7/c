@@ -74,7 +74,6 @@ void DFS(ListGraph *g, int vertex) {
 	while (node) {
 		if (!g->visited[node->v]) {
 			DFS(g, node->v);
-			
 		}
 		node = node->next;
 	}
