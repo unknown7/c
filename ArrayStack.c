@@ -6,14 +6,14 @@
 const int BLOCK = 20;
 const int MAX_SIZE = 20;
 int main() {
-	/*
-		*p++的操作内幕！
+	
+		//*p++的操作内幕！
 		 int *p = (int*)malloc(MAX_SIZE);
 		*p++=7;
 		printf("p[-1]=%d\n", p[-1]);
 		printf("p[0]=%d\n", p[0]);
 		printf("p[1]=%d\n", p[1]);
-	*/
+	
 	
 	ArrayStack s = create();
 	int i;
