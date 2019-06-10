@@ -3,7 +3,7 @@
 int isPrime(int x);
 int main() {
 	const int SIZE = 20;
-	int primes[SIZE] = {0};
+	int primes[SIZE];
 	int cnt = 0;
 	int number = 1;
 	while (cnt < SIZE) {
