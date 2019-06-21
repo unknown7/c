@@ -13,7 +13,7 @@ int main() {
 			}
 		}
 		if (c == 2) {
-			printf("%dÊÇËØËØ\n", i);
+			printf("%dÊÇËØÊı\n", i);
 		}
 	}
 	return 0;
