@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main() {
-	// 凑两元钱 
-	int x = 2;
+	// 凑三元钱 
+	int x = 3;
 	int one, two, five;
 	for (one = 1; one < x*10; one++) {
 		for (two = 1; two < x*10/2; two++) {
