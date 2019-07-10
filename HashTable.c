@@ -8,7 +8,7 @@ int main() {
 	HashTable t = create(8);
 	printf("t.size=%d\n", t.size);
 	
-	put(&t, 1, "122223");
+	put(&t, 1, "12223");
 	HNode *n = get(&t, 1);
 	printf("%s\n", n->value);
 	
