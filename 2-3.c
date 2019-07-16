@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 int main() {
-	const int NUMS = 4;
+	const int NUMS = 7;
 	int i;
 	for (i = NUMS; i > 0; i--) {
 		int j;
