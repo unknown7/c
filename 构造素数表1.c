@@ -25,7 +25,7 @@ int isPrime(int x) {
 		return isPrime;
 	}
 	int i;
-	for (i = 2; i < sqrt(x); i++) {
+	for (i = 2; i <= sqrt(x); i++) {
 		if (x % i == 0) {
 			isPrime = 0;
 			break;

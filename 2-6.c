@@ -2,6 +2,7 @@
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
+
 int main() {
 	float a=10, t=3, s;
 	s = 0.5 * a * t * t;
