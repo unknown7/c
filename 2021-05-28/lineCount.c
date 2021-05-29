@@ -11,6 +11,6 @@ int main()
 		{
 			nl++;
 		}
-	}z
+	}
 	printf("%ld\n", nl);
 }
