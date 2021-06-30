@@ -24,6 +24,6 @@ void show_pointer(void *x) {
 }
 
 int main() {
-	show_int(20);
+	show_int(30);
 	return 0;
 }
