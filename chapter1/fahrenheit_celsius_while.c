@@ -22,21 +22,20 @@
 
 #include <stdio.h>
 
+#define LOWER 0
+#define UPPER 300
+#define STEP 20
+
 int main()
 {
 	float fehrenheit, celsius;
-	float lower, upper, step;
 
-	lower = 0;
-	upper = 300;
-	step = 20;
+	fehrenheit = LOWER;
 
-	fehrenheit = lower;
-
-	while (fehrenheit <= upper) {
+	while (fehrenheit <= UPPER) {
 		celsius = (5.0 / 9.0) * (fehrenheit - 32.0);
 		printf("fehrenheit:%3.0f\tcelsius:%7.2f\n", fehrenheit, celsius);
-		fehrenheit += step;
+		fehrenheit += STEP;
 	}
 
 	return 0;

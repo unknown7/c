@@ -22,14 +22,15 @@
 
 #include <stdio.h>
 
+#define LOWER 0
+#define UPPER 300
+#define STEP 20
+
 int main()
 {
 	float fahrenheit, celsius;
-	float lower, upper, step;
-	lower = 0;
-	upper = 300;
-	step = 20;
-	for (fahrenheit = lower; fahrenheit <= upper; fahrenheit+=step)
+
+	for (fahrenheit = LOWER; fahrenheit <= UPPER; fahrenheit+=STEP)
 	{
 		celsius = (5.0 / 9.0) * (fahrenheit - 32.0);
 		printf("fahrenheit:%3.0f\tcelsius:%7.2f\n", fahrenheit, celsius);
