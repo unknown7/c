@@ -12,6 +12,11 @@ struct rect
 	struct point pt2;
 };
 
+struct ps {
+	int len;
+	char* str;
+} psp;
+
 int main(int argc, char const *argv[])
 {
 	pt.x = 30, pt.y = 2;
@@ -23,5 +28,53 @@ int main(int argc, char const *argv[])
 
 	printf("%d,%d\n", r.pt1.x, r.pt1.y);
 
+	char* pointer = "abc";
+	printf("%c\n", *(pointer++));
+	printf("%c\n", *pointer);
+
+	struct ps* pp = &psp;
+	pp->str = "treat";
+	printf("%d\n", pp->len);
+
+	printf("%p\n", pp);
+	// pp++;
+	printf("%s\n", pp->str);
+	printf("%p\n", pp);
+	printf("%d\n", pp->len++);
+	printf("%d\n", ++pp->len);
+	int* in = &(pp->len);
+	printf("%d\n", *in);
+
+	printf("%s\n", pp->str);
+	printf("%s\n", pp->str++);
+	printf("%s\n", pp->str);
+	printf("%s\n", ++pp->str);
+	printf("%s\n", pp++->str);
+	printf("%s\n", pp->str);
+
+	pp--;
+	char c = *pp->str++;
+	printf("%c\n", c);
+	c = *pp->str;
+	printf("%c\n", c);
+
+	c = *++pp->str;
+	printf("%c\n", c);
+	c = *pp->str;
+	printf("%c\n", c);
+
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
